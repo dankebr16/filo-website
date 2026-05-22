@@ -10,9 +10,13 @@
     <header class="header scrolled">
       <div class="container nav-wrap">
         <a href="./index.html#ana-sayfa" class="logo">EMRE <span>MOTOR BAKIM FILO</span></a>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="tr">TR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
         <nav class="nav">
-          <a href="./index.html#motorlar">Motorlara Dön</a>
-          <a href="./index.html#iletisim">İletişim</a>
+          <a href="./index.html#motorlar" data-i18n="back_bikes">Motorlara Dön</a>
+          <a href="./index.html#iletisim" data-i18n="contact">İletişim</a>
         </nav>
       </div>
     </header>
@@ -21,7 +25,7 @@
       <section class="section" style="padding-top: 120px">
         <div class="container">
           <div class="section-head">
-            <p class="eyebrow">Motor Detayı</p>
+            <p class="eyebrow" data-i18n="detail_eyebrow">Motor Detayı</p>
             <h1 id="detailTitle">Model Yükleniyor...</h1>
           </div>
 
@@ -30,19 +34,29 @@
               <div class="img-placeholder" style="height: 280px">
                 <img id="detailImage" src="" alt="Motor görseli" class="motor-image" />
               </div>
+              <div class="gallery-controls">
+                <button class="btn btn-outline" id="prevImageBtn" data-i18n="prev_btn">Önceki</button>
+                <button class="btn btn-outline" id="nextImageBtn" data-i18n="next_btn">Sonraki</button>
+              </div>
+              <div class="thumb-grid" id="thumbGrid"></div>
             </div>
             <div class="tool-card">
-              <h3>Teknik ve Kiralama Bilgileri</h3>
+              <h3 data-i18n="detail_info">Teknik ve Kiralama Bilgileri</h3>
               <ul id="detailSpecs" style="list-style: none; margin-top: 14px"></ul>
               <div class="card-actions" style="margin-top: 16px">
-                <a href="#" class="btn btn-primary wa-btn" id="detailWaBtn">WhatsApp’tan Kirala</a>
-                <a href="./index.html#motorlar" class="btn btn-outline">Geri Dön</a>
+                <a href="#" class="btn btn-primary wa-btn" id="detailWaBtn" data-i18n="rent_btn">WhatsApp’tan Kirala</a>
+                <a href="./index.html#motorlar" class="btn btn-outline" data-i18n="back_btn">Geri Dön</a>
               </div>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">×</button>
+      <img id="lightboxImage" src="" alt="Büyük görsel" />
+    </div>
 
     <script src="detail.js"></script>
   </body>

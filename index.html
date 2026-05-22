@@ -14,17 +14,21 @@
     <header class="header" id="top">
       <div class="container nav-wrap">
         <a href="#ana-sayfa" class="logo">EMRE <span>MOTOR BAKIM FILO</span></a>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="tr">TR</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
         <button class="menu-toggle" id="menuToggle" aria-label="Menüyü Aç/Kapat">
           <span></span><span></span><span></span>
         </button>
         <nav class="nav" id="navMenu">
-          <a href="#ana-sayfa">Ana Sayfa</a>
-          <a href="#motorlar">Motorlar</a>
-          <a href="#sartlar">Kiralama Şartları</a>
-          <a href="#sss">SSS</a>
-          <a href="#yorumlar">Yorumlar</a>
-          <a href="#hakkimizda">Hakkımızda</a>
-          <a href="#iletisim">İletişim / WhatsApp</a>
+          <a href="#ana-sayfa" data-i18n="nav_home">Ana Sayfa</a>
+          <a href="#motorlar" data-i18n="nav_bikes">Motorlar</a>
+          <a href="#sartlar" data-i18n="nav_terms">Kiralama Şartları</a>
+          <a href="#sss" data-i18n="nav_faq">SSS</a>
+          <a href="#yorumlar" data-i18n="nav_reviews">Yorumlar</a>
+          <a href="#hakkimizda" data-i18n="nav_about">Hakkımızda</a>
+          <a href="#iletisim" data-i18n="nav_contact">İletişim / WhatsApp</a>
         </nav>
       </div>
     </header>
@@ -33,15 +37,14 @@
       <section class="hero section" id="ana-sayfa">
         <div class="hero-overlay"></div>
         <div class="container hero-content reveal">
-          <p class="eyebrow">Bursa'da Profesyonel Motor Hizmeti</p>
-          <h1>Bursa’da Güvenilir Motor Kiralama</h1>
-          <p>
+          <p class="eyebrow" data-i18n="hero_eyebrow">Bursa'da Profesyonel Motor Hizmeti</p>
+          <h1 data-i18n="hero_title">Bursa’da Güvenilir Motor Kiralama</h1>
+          <p data-i18n="hero_text">
             Günlük ve haftalık motor kiralama seçenekleriyle ekonomik, bakımlı ve
             güvenilir motosikletler EMRE MOTOR BAKIM FILO’da.
           </p>
           <div class="hero-actions">
-            <a href="#motorlar" class="btn btn-primary">Motorları İncele</a>
-            <a href="#" class="btn btn-outline wa-btn">WhatsApp’tan Kirala</a>
+            <a href="#motorlar" class="btn btn-primary" data-i18n="hero_cta">Motorları İncele</a>
           </div>
         </div>
       </section>
@@ -49,29 +52,34 @@
       <section class="trust section">
         <div class="container trust-grid">
           <article class="trust-card reveal">
-            <h3>Bakımlı Motorlar</h3>
-            <p>Her teslimattan önce teknik kontrolleri yapılmış, güvenli motorlar.</p>
+            <h3 data-i18n="trust_1_t">Bakımlı Motorlar</h3>
+            <p data-i18n="trust_1_d">Her teslimattan önce teknik kontrolleri yapılmış, güvenli motorlar.</p>
           </article>
           <article class="trust-card reveal">
-            <h3>Hızlı Kiralama</h3>
-            <p>Kısa sürede işlem, net bilgilendirme ve kolay rezervasyon süreci.</p>
+            <h3 data-i18n="trust_2_t">Hızlı Kiralama</h3>
+            <p data-i18n="trust_2_d">Kısa sürede işlem, net bilgilendirme ve kolay rezervasyon süreci.</p>
           </article>
           <article class="trust-card reveal">
-            <h3>Şeffaf Şartlar</h3>
-            <p>Sürpriz maliyet olmadan açık fiyat ve net kiralama koşulları.</p>
+            <h3 data-i18n="trust_3_t">Şeffaf Şartlar</h3>
+            <p data-i18n="trust_3_d">Sürpriz maliyet olmadan açık fiyat ve net kiralama koşulları.</p>
           </article>
+        </div>
+        <div class="container badges-row reveal">
+          <span class="trust-badge" data-i18n="badge_1">Sözleşmeli</span>
+          <span class="trust-badge" data-i18n="badge_2">Bakımlı Teslim</span>
+          <span class="trust-badge" data-i18n="badge_3">Hızlı Destek</span>
         </div>
       </section>
 
       <section class="section" id="motorlar">
         <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow">Motor Seçenekleri</p>
-            <h2>Size Uygun Motoru Hemen Seçin</h2>
+            <p class="eyebrow" data-i18n="bikes_eyebrow">Motor Seçenekleri</p>
+            <h2 data-i18n="bikes_title">Size Uygun Motoru Hemen Seçin</h2>
           </div>
           <div class="tools-grid reveal">
             <div class="tool-card">
-              <h3>Motor Filtrele</h3>
+              <h3 data-i18n="filter_title">Motor Filtrele</h3>
               <div class="filter-row">
                 <select id="licenseFilter">
                   <option value="all">Ehliyet: Tümü</option>
@@ -87,7 +95,7 @@
               </div>
             </div>
             <div class="tool-card">
-              <h3>Canlı Fiyat Hesaplama</h3>
+              <h3 data-i18n="calc_title">Canlı Fiyat Hesaplama</h3>
               <div class="calculator-grid">
                 <select id="calcMotor">
                   <option value="">Motor seçin</option>
@@ -96,13 +104,38 @@
                   <option value="1000" data-deposit="5000">Honda PCX 125</option>
                 </select>
                 <input type="number" id="calcDays" min="1" placeholder="Kaç gün?" />
-                <button class="btn btn-primary" id="calcBtn">Hesapla</button>
+                <button class="btn btn-primary" id="calcBtn" data-i18n="calc_btn">Hesapla</button>
               </div>
-              <p class="calc-result" id="calcResult">Toplam tutarı görmek için hesapla.</p>
+              <p class="calc-result" id="calcResult" data-i18n="calc_hint">Toplam tutarı görmek için hesapla.</p>
+            </div>
+          </div>
+          <div class="compare-box reveal">
+            <h3 data-i18n="compare_title">Karşılaştırma Modu</h3>
+            <div class="compare-controls">
+              <select id="compareBikeA">
+                <option value="">1. motoru seçin</option>
+                <option value="Honda Dio 110">Honda Dio 110</option>
+                <option value="Yamaha NMAX 125">Yamaha NMAX 125</option>
+                <option value="Honda PCX 125">Honda PCX 125</option>
+              </select>
+              <select id="compareBikeB">
+                <option value="">2. motoru seçin</option>
+                <option value="Honda Dio 110">Honda Dio 110</option>
+                <option value="Yamaha NMAX 125">Yamaha NMAX 125</option>
+                <option value="Honda PCX 125">Honda PCX 125</option>
+              </select>
+              <button class="btn btn-primary" id="compareBtn" data-i18n="compare_btn">Karşılaştır</button>
+            </div>
+            <div class="compare-result" id="compareResult" data-i18n="compare_hint">
+              İki motor seçip karşılaştırma butonuna basın.
             </div>
           </div>
           <div class="motor-grid">
             <article class="motor-card reveal" data-model="Honda Dio 110" data-price="750" data-license="A1 A2" data-deposit="3000">
+              <div class="campaign-badges">
+                <span class="badge">Haftalık %9 İndirim</span>
+                <span class="badge">Aylık %56 İndirim</span>
+              </div>
               <div class="img-placeholder">
                 <img
                   src="./honda-dio-110.jpg"
@@ -115,16 +148,18 @@
                 <li><strong>Günlük Fiyat:</strong> 750 TL</li>
                 <li><strong>Haftalık Fiyat:</strong> 4.800 TL</li>
                 <li><strong>Aylık Fiyat:</strong> 10.000 TL</li>
-                <li><strong>Depozito:</strong> 3.000 TL</li>
-                <li><strong>Ehliyet:</strong> A1 / A2</li>
               </ul>
               <div class="card-actions">
-                <a href="#" class="btn btn-primary wa-btn" data-bike="Honda Dio 110">WhatsApp’tan Kirala</a>
-                <a href="./detail.html?model=Honda%20Dio%20110" class="btn btn-outline">Detay Gör</a>
+                <a href="#" class="btn btn-primary wa-btn" data-bike="Honda Dio 110" data-i18n="rent_btn">WhatsApp’tan Kirala</a>
+                <a href="./detail.html?model=Honda%20Dio%20110" class="btn btn-outline" data-i18n="detail_btn">Detay Gör</a>
               </div>
             </article>
 
             <article class="motor-card reveal" data-model="Yamaha NMAX 125" data-price="1100" data-license="A1 A2" data-deposit="5000">
+              <div class="campaign-badges">
+                <span class="badge">Haftalık %9 İndirim</span>
+                <span class="badge">Aylık %31 İndirim</span>
+              </div>
               <div class="img-placeholder">
                 <img
                   src="./yamaha-nmax-125.jpg"
@@ -137,16 +172,18 @@
                 <li><strong>Günlük Fiyat:</strong> 1.100 TL</li>
                 <li><strong>Haftalık Fiyat:</strong> 7.000 TL</li>
                 <li><strong>Aylık Fiyat:</strong> 16.000 TL</li>
-                <li><strong>Depozito:</strong> 5.000 TL</li>
-                <li><strong>Ehliyet:</strong> A1 / A2</li>
               </ul>
               <div class="card-actions">
-                <a href="#" class="btn btn-primary wa-btn" data-bike="Yamaha NMAX 125">WhatsApp’tan Kirala</a>
-                <a href="./detail.html?model=Yamaha%20NMAX%20125" class="btn btn-outline">Detay Gör</a>
+                <a href="#" class="btn btn-primary wa-btn" data-bike="Yamaha NMAX 125" data-i18n="rent_btn">WhatsApp’tan Kirala</a>
+                <a href="./detail.html?model=Yamaha%20NMAX%20125" class="btn btn-outline" data-i18n="detail_btn">Detay Gör</a>
               </div>
             </article>
 
             <article class="motor-card reveal" data-model="Honda PCX 125" data-price="1000" data-license="A1 A2" data-deposit="5000">
+              <div class="campaign-badges">
+                <span class="badge">Haftalık %7 İndirim</span>
+                <span class="badge">Aylık %47 İndirim</span>
+              </div>
               <div class="img-placeholder">
                 <img
                   src="./honda-pcx-125.jpg"
@@ -159,12 +196,10 @@
                 <li><strong>Günlük Fiyat:</strong> 1.000 TL</li>
                 <li><strong>Haftalık Fiyat:</strong> 6.500 TL</li>
                 <li><strong>Aylık Fiyat:</strong> 16.000 TL</li>
-                <li><strong>Depozito:</strong> 5.000 TL</li>
-                <li><strong>Ehliyet:</strong> A1 / A2</li>
               </ul>
               <div class="card-actions">
-                <a href="#" class="btn btn-primary wa-btn" data-bike="Honda PCX 125">WhatsApp’tan Kirala</a>
-                <a href="./detail.html?model=Honda%20PCX%20125" class="btn btn-outline">Detay Gör</a>
+                <a href="#" class="btn btn-primary wa-btn" data-bike="Honda PCX 125" data-i18n="rent_btn">WhatsApp’tan Kirala</a>
+                <a href="./detail.html?model=Honda%20PCX%20125" class="btn btn-outline" data-i18n="detail_btn">Detay Gör</a>
               </div>
             </article>
           </div>
@@ -174,8 +209,8 @@
       <section class="section" id="sss">
         <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow">Sık Sorulan Sorular</p>
-            <h2>Kiralama Süreci Hakkında</h2>
+            <p class="eyebrow" data-i18n="faq_eyebrow">Sık Sorulan Sorular</p>
+            <h2 data-i18n="faq_title">Kiralama Süreci Hakkında</h2>
           </div>
           <div class="faq-list reveal">
             <details class="faq-item">
@@ -197,8 +232,8 @@
       <section class="section" id="yorumlar">
         <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow">Müşteri Yorumları</p>
-            <h2>Gerçek Deneyimler</h2>
+            <p class="eyebrow" data-i18n="reviews_eyebrow">Müşteri Yorumları</p>
+            <h2 data-i18n="reviews_title">Gerçek Deneyimler</h2>
           </div>
           <div class="review-grid">
             <article class="review-card reveal">
@@ -220,8 +255,8 @@
       <section class="section" id="sartlar">
         <div class="container">
           <div class="section-head reveal">
-            <p class="eyebrow">Kiralama Şartları</p>
-            <h2>Net ve Güvenilir Süreç</h2>
+            <p class="eyebrow" data-i18n="terms_eyebrow">Kiralama Şartları</p>
+            <h2 data-i18n="terms_title">Net ve Güvenilir Süreç</h2>
           </div>
           <div class="terms-grid">
             <article class="term-card reveal">Geçerli ehliyet ve kimlik zorunludur.</article>
@@ -241,9 +276,9 @@
               class="btn btn-outline"
               id="pdfDownloadBtn"
             >
-              Kiralama Sözleşmesi PDF İndir
+              <span data-i18n="pdf_btn">Kiralama Sözleşmesi PDF İndir</span>
             </a>
-            <a href="#" class="btn btn-outline">Kiralama Sözleşmesi Word İndir</a>
+            <a href="#" class="btn btn-outline" data-i18n="word_btn">Kiralama Sözleşmesi Word İndir</a>
           </div>
         </div>
       </section>
@@ -251,7 +286,7 @@
       <section class="section" id="hakkimizda">
         <div class="container about reveal">
           <div class="section-head">
-            <p class="eyebrow">Hakkımızda</p>
+            <p class="eyebrow" data-i18n="about_eyebrow">Hakkımızda</p>
             <h2>EMRE MOTOR BAKIM FILO</h2>
           </div>
           <p>
@@ -268,8 +303,8 @@
         <div class="container contact-grid">
           <div class="contact-info reveal">
             <div class="section-head">
-              <p class="eyebrow">İletişim</p>
-              <h2>Bize Ulaşın</h2>
+            <p class="eyebrow" data-i18n="contact_eyebrow">İletişim</p>
+            <h2 data-i18n="contact_title">Bize Ulaşın</h2>
             </div>
             <ul>
               <li><strong>Yetkili:</strong> Aziz Yavaş - Emre Yavaş</li>
@@ -291,7 +326,7 @@
             </ul>
             <div class="contact-actions">
               <a href="#" class="btn btn-primary wa-btn">WhatsApp</a>
-              <a href="tel:+905302479714" class="btn btn-outline">Tek Tık Ara</a>
+              <a href="tel:+905302479714" class="btn btn-outline" data-i18n="call_btn">Tek Tık Ara</a>
             </div>
             <div class="map-placeholder">
               <iframe
@@ -308,23 +343,63 @@
           </div>
 
           <form class="contact-form reveal" id="contactForm">
-            <h3>Hızlı Talep Formu</h3>
-            <label for="name">Ad Soyad</label>
-            <input type="text" id="name" name="name" required />
+            <h3 data-i18n="form_title">Hızlı Talep Formu</h3>
+            <div class="request-grid">
+              <div>
+                <label for="name" data-i18n="f_name">Ad Soyad</label>
+                <input type="text" id="name" name="name" required />
 
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" name="phone" required />
+                <label for="phone" data-i18n="f_phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" required />
 
-            <label for="bike">Kiralamak istediğiniz motor</label>
-            <input type="text" id="bike" name="bike" required />
+                <label for="bike" data-i18n="f_bike">Kiralamak istediğiniz motor</label>
+                <select id="bike" name="bike" required>
+                  <option value="">Motor seçin</option>
+                  <option value="Honda Dio 110">Honda Dio 110</option>
+                  <option value="Yamaha NMAX 125">Yamaha NMAX 125</option>
+                  <option value="Honda PCX 125">Honda PCX 125</option>
+                </select>
 
-            <label for="date">Tarih aralığı</label>
-            <input type="text" id="date" name="date" placeholder="Örn: 12.06.2026 - 15.06.2026" required />
+                <label for="date" data-i18n="f_date">Tarih</label>
+                <input type="text" id="date" name="date" placeholder="Örn: 12.06.2026" required />
 
-            <label for="message">Mesaj</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+                <div class="duration-row">
+                  <div>
+                    <label for="durationType" data-i18n="duration_type">Süre Tipi</label>
+                    <select id="durationType" name="durationType" required>
+                      <option value="daily">Günlük</option>
+                      <option value="weekly">Haftalık</option>
+                      <option value="monthly">Aylık</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="durationCount" data-i18n="duration_count">Süre Adedi</label>
+                    <input type="number" id="durationCount" name="durationCount" min="1" value="1" required />
+                  </div>
+                </div>
 
-            <button type="submit" class="btn btn-primary">Gönder</button>
+                <label for="message" data-i18n="f_message">Mesaj</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary" data-i18n="send_btn">Gönder</button>
+                  <button type="button" class="btn btn-outline" id="waSummaryBtn" data-i18n="wa_summary_btn">
+                    Özeti WhatsApp'a Gönder
+                  </button>
+                </div>
+              </div>
+              <aside class="summary-card" id="summaryCard">
+                <h4 data-i18n="summary_title">Rezervasyon Özeti</h4>
+                <ul>
+                  <li><strong data-i18n="summary_bike">Motor:</strong> <span id="sumBike">-</span></li>
+                  <li><strong data-i18n="summary_date">Tarih:</strong> <span id="sumDate">-</span></li>
+                  <li><strong data-i18n="summary_duration">Süre:</strong> <span id="sumDuration">-</span></li>
+                  <li><strong data-i18n="summary_rental">Kiralama:</strong> <span id="sumRental">-</span></li>
+                  <li><strong data-i18n="summary_deposit">Depozito:</strong> <span id="sumDeposit">-</span></li>
+                  <li><strong data-i18n="summary_total">Toplam:</strong> <span id="sumTotal">-</span></li>
+                </ul>
+              </aside>
+            </div>
             <p class="form-note" id="formNote"></p>
           </form>
         </div>
@@ -336,7 +411,7 @@
       class="floating-wa wa-btn"
       aria-label="WhatsApp ile iletişime geç"
     >
-      WhatsApp
+      <span data-i18n="wa_float">WhatsApp</span>
     </a>
 
     <footer class="footer">

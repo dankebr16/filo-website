@@ -220,6 +220,51 @@ body {
   gap: 18px;
 }
 
+.tools-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.tool-card,
+.faq-item,
+.review-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+}
+
+.tool-card {
+  padding: 20px;
+}
+
+.filter-row,
+.calculator-grid,
+.card-actions,
+.contact-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-row select,
+.calculator-grid select,
+.calculator-grid input {
+  flex: 1;
+  min-width: 150px;
+  background: #131313;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.calc-result {
+  margin-top: 10px;
+  color: #d6d6d6;
+}
+
 .motor-card {
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
@@ -263,6 +308,12 @@ body {
   font-size: 0.95rem;
 }
 
+.card-actions .btn {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
 .status {
   color: #64dd7a;
   font-weight: 700;
@@ -287,6 +338,46 @@ body {
   color: #e1e1e1;
 }
 
+.faq-list {
+  margin-top: 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  padding: 14px 16px;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.faq-item p {
+  margin-top: 8px;
+  color: #d6d6d6;
+}
+
+.review-grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.review-card {
+  padding: 18px;
+}
+
+.review-card p {
+  color: #d8d8d8;
+}
+
+.review-card h4 {
+  margin-top: 12px;
+  color: #ffffff;
+}
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -302,6 +393,15 @@ body {
   margin-bottom: 8px;
 }
 
+.map-link {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.map-link:hover {
+  color: var(--red);
+}
+
 .map-placeholder {
   margin-top: 18px;
   height: 220px;
@@ -311,6 +411,10 @@ body {
   color: #cfcfcf;
   border: 1px dashed rgba(255, 255, 255, 0.26);
   background: linear-gradient(130deg, #151515, #0f0f0f);
+}
+
+.map-placeholder iframe {
+  border-radius: 10px;
 }
 
 .contact-form h3 {
@@ -359,6 +463,7 @@ body {
   gap: 18px;
 }
 
+
 .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -392,8 +497,10 @@ body {
   }
 
   .trust-grid,
+  .tools-grid,
   .motor-grid,
-  .contact-grid {
+  .contact-grid,
+  .review-grid {
     grid-template-columns: 1fr;
   }
 

@@ -21,6 +21,8 @@
           <a href="#ana-sayfa">Ana Sayfa</a>
           <a href="#motorlar">Motorlar</a>
           <a href="#sartlar">Kiralama Şartları</a>
+          <a href="#sss">SSS</a>
+          <a href="#yorumlar">Yorumlar</a>
           <a href="#hakkimizda">Hakkımızda</a>
           <a href="#iletisim">İletişim / WhatsApp</a>
         </nav>
@@ -67,8 +69,40 @@
             <p class="eyebrow">Motor Seçenekleri</p>
             <h2>Size Uygun Motoru Hemen Seçin</h2>
           </div>
+          <div class="tools-grid reveal">
+            <div class="tool-card">
+              <h3>Motor Filtrele</h3>
+              <div class="filter-row">
+                <select id="licenseFilter">
+                  <option value="all">Ehliyet: Tümü</option>
+                  <option value="A1">A1</option>
+                  <option value="A2">A2</option>
+                </select>
+                <select id="priceFilter">
+                  <option value="all">Fiyat: Tümü</option>
+                  <option value="900">900 TL altı</option>
+                  <option value="1000">1.000 TL altı</option>
+                  <option value="1200">1.200 TL altı</option>
+                </select>
+              </div>
+            </div>
+            <div class="tool-card">
+              <h3>Canlı Fiyat Hesaplama</h3>
+              <div class="calculator-grid">
+                <select id="calcMotor">
+                  <option value="">Motor seçin</option>
+                  <option value="750" data-deposit="3000">Honda Dio 110</option>
+                  <option value="1100" data-deposit="5000">Yamaha NMAX 125</option>
+                  <option value="1000" data-deposit="5000">Honda PCX 125</option>
+                </select>
+                <input type="number" id="calcDays" min="1" placeholder="Kaç gün?" />
+                <button class="btn btn-primary" id="calcBtn">Hesapla</button>
+              </div>
+              <p class="calc-result" id="calcResult">Toplam tutarı görmek için hesapla.</p>
+            </div>
+          </div>
           <div class="motor-grid">
-            <article class="motor-card reveal">
+            <article class="motor-card reveal" data-model="Honda Dio 110" data-price="750" data-license="A1 A2" data-deposit="3000">
               <div class="img-placeholder">
                 <img
                   src="./honda-dio-110.jpg"
@@ -81,12 +115,14 @@
                 <li><strong>Günlük Fiyat:</strong> 750 TL</li>
                 <li><strong>Depozito:</strong> 3.000 TL</li>
                 <li><strong>Ehliyet:</strong> A1 / A2</li>
-                <li><strong>Durum:</strong> <span class="status">Müsait</span></li>
               </ul>
-              <a href="#" class="btn btn-primary wa-btn">WhatsApp’tan Kirala</a>
+              <div class="card-actions">
+                <a href="#" class="btn btn-primary wa-btn" data-bike="Honda Dio 110">WhatsApp’tan Kirala</a>
+                <a href="./detail.html?model=Honda%20Dio%20110" class="btn btn-outline">Detay Gör</a>
+              </div>
             </article>
 
-            <article class="motor-card reveal">
+            <article class="motor-card reveal" data-model="Yamaha NMAX 125" data-price="1100" data-license="A1 A2" data-deposit="5000">
               <div class="img-placeholder">
                 <img
                   src="./yamaha-nmax-125.jpg"
@@ -99,12 +135,14 @@
                 <li><strong>Günlük Fiyat:</strong> 1.100 TL</li>
                 <li><strong>Depozito:</strong> 5.000 TL</li>
                 <li><strong>Ehliyet:</strong> A1 / A2</li>
-                <li><strong>Durum:</strong> <span class="status">Müsait</span></li>
               </ul>
-              <a href="#" class="btn btn-primary wa-btn">WhatsApp’tan Kirala</a>
+              <div class="card-actions">
+                <a href="#" class="btn btn-primary wa-btn" data-bike="Yamaha NMAX 125">WhatsApp’tan Kirala</a>
+                <a href="./detail.html?model=Yamaha%20NMAX%20125" class="btn btn-outline">Detay Gör</a>
+              </div>
             </article>
 
-            <article class="motor-card reveal">
+            <article class="motor-card reveal" data-model="Honda PCX 125" data-price="1000" data-license="A1 A2" data-deposit="5000">
               <div class="img-placeholder">
                 <img
                   src="./honda-pcx-125.jpg"
@@ -117,9 +155,57 @@
                 <li><strong>Günlük Fiyat:</strong> 1.000 TL</li>
                 <li><strong>Depozito:</strong> 5.000 TL</li>
                 <li><strong>Ehliyet:</strong> A1 / A2</li>
-                <li><strong>Durum:</strong> <span class="status">Müsait</span></li>
               </ul>
-              <a href="#" class="btn btn-primary wa-btn">WhatsApp’tan Kirala</a>
+              <div class="card-actions">
+                <a href="#" class="btn btn-primary wa-btn" data-bike="Honda PCX 125">WhatsApp’tan Kirala</a>
+                <a href="./detail.html?model=Honda%20PCX%20125" class="btn btn-outline">Detay Gör</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sss">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Sık Sorulan Sorular</p>
+            <h2>Kiralama Süreci Hakkında</h2>
+          </div>
+          <div class="faq-list reveal">
+            <details class="faq-item">
+              <summary>Depozito ne zaman iade edilir?</summary>
+              <p>Motor sorunsuz teslim edildiğinde kontrol sonrası depozito aynı gün içinde iade edilir.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Hangi ehliyet ile kiralama yapılabilir?</summary>
+              <p>Listelenen motorlar için A1 veya A2 ehliyet gereklidir.</p>
+            </details>
+            <details class="faq-item">
+              <summary>Kask kiralamaya dahil mi?</summary>
+              <p>Evet, güvenlik için kask kullanımı zorunludur ve teslimatta bilgilendirme yapılır.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="yorumlar">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Müşteri Yorumları</p>
+            <h2>Gerçek Deneyimler</h2>
+          </div>
+          <div class="review-grid">
+            <article class="review-card reveal">
+              <p>“Motor tertemizdi, teslim süreci çok hızlıydı. Kesinlikle tekrar kiralarım.”</p>
+              <h4>Mehmet K.</h4>
+            </article>
+            <article class="review-card reveal">
+              <p>“Fiyat konusunda çok şeffaflardı. WhatsApp’tan hemen dönüş yaptılar.”</p>
+              <h4>Ayşe D.</h4>
+            </article>
+            <article class="review-card reveal">
+              <p>“Bakımlı motor, düzgün esnaf. Bursa’da güvenle tercih edilecek yer.”</p>
+              <h4>Burak T.</h4>
             </article>
           </div>
         </div>
@@ -176,13 +262,26 @@
               <li><strong>Yetkili:</strong> Aziz Yavaş</li>
               <li><strong>Telefon:</strong> 0 530 247 97 14</li>
               <li><strong>Instagram:</strong> @erenmotor</li>
-              <li><strong>Konum:</strong> Bursa, Osmangazi, Bağlarbaşı Mah., 1. Çalı Sok., 1A</li>
+              <li>
+                <strong>Konum:</strong>
+                <a
+                  href="https://maps.app.goo.gl/Wn4B2doqCpdcBy166"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="map-link"
+                >
+                  Google Maps'te Gör
+                </a>
+              </li>
             </ul>
-            <a href="#" class="btn btn-primary wa-btn">WhatsApp</a>
+            <div class="contact-actions">
+              <a href="#" class="btn btn-primary wa-btn">WhatsApp</a>
+              <a href="tel:+905302479714" class="btn btn-outline">Tek Tık Ara</a>
+            </div>
             <div class="map-placeholder">
               <iframe
                 title="EREN MOTOR FILO Konum"
-                src="https://maps.google.com/maps?q=Bursa%2C%20Osmangazi%2C%20Ba%C4%9Flarba%C5%9F%C4%B1%20Mah.%2C%201.%20%C3%87al%C4%B1%20Sok.%2C%201A&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Ba%C4%9Flarba%C5%9F%C4%B1%2C%20Elmap%C4%B1nar%20Sk.%2C%2016160%20Osmangazi%2FBursa%2C%20T%C3%BCrkiye&t=&z=17&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style="border: 0"

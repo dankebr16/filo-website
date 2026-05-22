@@ -1,7 +1,7 @@
 // WhatsApp yapılandırması
 const whatsappNumber = "905302479714";
 const defaultMessage =
-  "Merhaba, EREN MOTOR üzerinden motor kiralamak istiyorum. Bilgi alabilir miyim?";
+  "Merhaba, EREN MOTOR FILO üzerinden motor kiralamak istiyorum. Bilgi alabilir miyim?";
 
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
@@ -11,13 +11,27 @@ const header = document.querySelector(".header");
 const contactForm = document.getElementById("contactForm");
 const formNote = document.getElementById("formNote");
 const revealItems = document.querySelectorAll(".reveal");
+const motorCards = document.querySelectorAll(".motor-card");
+
+const licenseFilter = document.getElementById("licenseFilter");
+const priceFilter = document.getElementById("priceFilter");
+const calcMotor = document.getElementById("calcMotor");
+const calcDays = document.getElementById("calcDays");
+const calcBtn = document.getElementById("calcBtn");
+const calcResult = document.getElementById("calcResult");
+
+
+function openWhatsapp(message) {
+  const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  window.open(waUrl, "_blank");
+}
 
 // Mobil menü aç/kapat
 menuToggle?.addEventListener("click", () => {
   navMenu.classList.toggle("open");
 });
 
-// Menü linklerinde yumuşak kaydırma + mobilde menüyü kapatma
+// Menü linklerinde smooth scroll + mobil menüyü kapatma
 navLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
@@ -32,12 +46,15 @@ navLinks.forEach((link) => {
   });
 });
 
-// Tüm WhatsApp butonlarına hazır mesaj ile yönlendirme
+// Motor bazlı WhatsApp mesajı
 waButtons.forEach((button) => {
   button.addEventListener("click", (event) => {
     event.preventDefault();
-    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
-    window.open(waUrl, "_blank");
+    const bikeName = button.dataset.bike;
+    const message = bikeName
+      ? `Merhaba, ${bikeName} modeli için kiralama yapmak istiyorum. Bilgi alabilir miyim?`
+      : defaultMessage;
+    openWhatsapp(message);
   });
 });
 
@@ -50,7 +67,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Basit form kontrolü ve WhatsApp gönderimi
+// Form kontrolü ve WhatsApp gönderimi
 contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -66,7 +83,7 @@ contactForm?.addEventListener("submit", (event) => {
     return;
   }
 
-  const formMessage = `Merhaba, EREN MOTOR üzerinden kiralama talebi oluşturmak istiyorum.
+  const formMessage = `Merhaba, EREN MOTOR FILO üzerinden kiralama talebi oluşturmak istiyorum.
 Ad Soyad: ${name}
 Telefon: ${phone}
 Motor: ${bike}
@@ -75,10 +92,50 @@ Mesaj: ${message}`;
 
   formNote.textContent = "Talebiniz WhatsApp'a yönlendiriliyor...";
   formNote.style.color = "#9df7a4";
-
-  const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(formMessage)}`;
-  window.open(waUrl, "_blank");
+  openWhatsapp(formMessage);
   contactForm.reset();
+});
+
+// Motor filtreleme
+function applyFilters() {
+  const selectedLicense = licenseFilter?.value || "all";
+  const selectedPrice = priceFilter?.value || "all";
+
+  motorCards.forEach((card) => {
+    const cardLicense = card.dataset.license || "";
+    const cardPrice = Number(card.dataset.price || 0);
+
+    const licenseMatch =
+      selectedLicense === "all" || cardLicense.includes(selectedLicense);
+    const priceMatch =
+      selectedPrice === "all" || cardPrice <= Number(selectedPrice);
+
+    card.style.display = licenseMatch && priceMatch ? "" : "none";
+  });
+}
+
+licenseFilter?.addEventListener("change", applyFilters);
+priceFilter?.addEventListener("change", applyFilters);
+
+// Canlı fiyat hesaplama
+calcBtn?.addEventListener("click", () => {
+  const dailyPrice = Number(calcMotor?.value || 0);
+  const days = Number(calcDays?.value || 0);
+  const selectedOption = calcMotor?.selectedOptions?.[0];
+  const deposit = Number(selectedOption?.dataset.deposit || 0);
+
+  if (!dailyPrice || !days) {
+    calcResult.textContent = "Lütfen motor seçin ve gün sayısı girin.";
+    calcResult.style.color = "#ff7b7b";
+    return;
+  }
+
+  const rentalTotal = dailyPrice * days;
+  const grandTotal = rentalTotal + deposit;
+  calcResult.style.color = "#9df7a4";
+  calcResult.textContent = `Kiralama: ${rentalTotal.toLocaleString("tr-TR")} TL | Depozito: ${deposit.toLocaleString(
+    "tr-TR"
+  )} TL | Toplam: ${grandTotal.toLocaleString("tr-TR")} TL`;
 });
 
 // Scroll görünürlük animasyonu

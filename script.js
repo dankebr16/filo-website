@@ -19,6 +19,7 @@ const calcMotor = document.getElementById("calcMotor");
 const calcDays = document.getElementById("calcDays");
 const calcBtn = document.getElementById("calcBtn");
 const calcResult = document.getElementById("calcResult");
+const pdfDownloadBtn = document.getElementById("pdfDownloadBtn");
 
 
 function openWhatsapp(message) {
@@ -136,6 +137,23 @@ calcBtn?.addEventListener("click", () => {
   calcResult.textContent = `Kiralama: ${rentalTotal.toLocaleString("tr-TR")} TL | Depozito: ${deposit.toLocaleString(
     "tr-TR"
   )} TL | Toplam: ${grandTotal.toLocaleString("tr-TR")} TL`;
+});
+
+// PDF indirme (file:// ortamında uyumluluk için fallback içerir)
+pdfDownloadBtn?.addEventListener("click", (event) => {
+  event.preventDefault();
+  const pdfPath = "./EREN_MOTOR_Kiralama_Sozlesmesi.pdf";
+
+  try {
+    const link = document.createElement("a");
+    link.href = pdfPath;
+    link.download = "EREN_MOTOR_Kiralama_Sozlesmesi.pdf";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+  } catch (error) {
+    window.open(pdfPath, "_blank");
+  }
 });
 
 // Scroll görünürlük animasyonu

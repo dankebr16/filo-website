@@ -8,6 +8,8 @@ const bikes = {
   "Honda Dio 110": {
     image: "./honda-dio-110.jpg",
     dailyPrice: "750 TL",
+    weeklyPrice: "4.800 TL",
+    monthlyPrice: "10.000 TL",
     deposit: "3.000 TL",
     license: "A1 / A2",
     engine: "110 cc",
@@ -16,6 +18,8 @@ const bikes = {
   "Yamaha NMAX 125": {
     image: "./yamaha-nmax-125.jpg",
     dailyPrice: "1.100 TL",
+    weeklyPrice: "7.000 TL",
+    monthlyPrice: "16.000 TL",
     deposit: "5.000 TL",
     license: "A1 / A2",
     engine: "125 cc",
@@ -24,6 +28,8 @@ const bikes = {
   "Honda PCX 125": {
     image: "./honda-pcx-125.jpg",
     dailyPrice: "1.000 TL",
+    weeklyPrice: "6.500 TL",
+    monthlyPrice: "16.000 TL",
     deposit: "5.000 TL",
     license: "A1 / A2",
     engine: "125 cc",
@@ -46,6 +52,8 @@ if (!bike) {
 
   specsEl.innerHTML = `
     <li><strong>Günlük Fiyat:</strong> ${bike.dailyPrice}</li>
+    <li><strong>Haftalık Fiyat:</strong> ${bike.weeklyPrice}</li>
+    <li><strong>Aylık Fiyat:</strong> ${bike.monthlyPrice}</li>
     <li><strong>Depozito:</strong> ${bike.deposit}</li>
     <li><strong>Ehliyet:</strong> ${bike.license}</li>
     <li><strong>Motor Hacmi:</strong> ${bike.engine}</li>

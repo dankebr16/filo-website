@@ -1,7 +1,7 @@
 // WhatsApp yapılandırması
 const whatsappNumber = "905302479714";
 const defaultMessage =
-  "Merhaba, EREN MOTOR FILO üzerinden motor kiralamak istiyorum. Bilgi alabilir miyim?";
+  "Merhaba, EMRE MOTOR BAKIM FILO üzerinden motor kiralamak istiyorum. Bilgi alabilir miyim?";
 
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
@@ -84,7 +84,7 @@ contactForm?.addEventListener("submit", (event) => {
     return;
   }
 
-  const formMessage = `Merhaba, EREN MOTOR FILO üzerinden kiralama talebi oluşturmak istiyorum.
+  const formMessage = `Merhaba, EMRE MOTOR BAKIM FILO üzerinden kiralama talebi oluşturmak istiyorum.
 Ad Soyad: ${name}
 Telefon: ${phone}
 Motor: ${bike}
